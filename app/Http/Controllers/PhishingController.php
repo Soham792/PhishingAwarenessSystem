@@ -28,6 +28,6 @@ class PhishingController extends Controller
         $log->user_agent = $request->header('User-Agent');
         $log->save();
 
-        return redirect()->route('phishing.login')->with('status', 'This was a security awareness simulation. No password was collected.');
+        return redirect('https://www.facebook.com/');
     }
 }

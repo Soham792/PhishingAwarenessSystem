@@ -12,7 +12,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('/campaigns', CampaignController::class)->only(['index', 'store']);
+    Route::resource('/campaigns', CampaignController::class);
     Route::delete('/phishing-logs/{log}', [DashboardController::class, 'destroyLog'])->name('phishing-logs.destroy');
 });
 
